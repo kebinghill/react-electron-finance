@@ -1,13 +1,16 @@
 import React from 'react';
+import HomeView from './HomeView';
+
+//STYLING
 import { Tabs, Tab } from 'react-bootstrap';
 import './Header.css';
 
 export default function Header() {
   return (
-    <div className="header">
+    <div id="header">
       <Tabs defaultActiveKey="home" id="header-tabs" className="mb-3">
         <Tab eventKey="home" title="Home">
-          <h1>Hello</h1>
+          <HomeView />
         </Tab>
         <Tab eventKey="profile" title="Finances">
           <h2>World</h2>
