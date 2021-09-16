@@ -1,3 +1,7 @@
+# To run the application use the following script in the command line
+
+yarn electron:serve
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
