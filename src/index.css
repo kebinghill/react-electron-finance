@@ -2,4 +2,10 @@ body {
   margin: 0;
   background: url('background-image.jpeg') no-repeat center center fixed;
   background-size: cover;
+  font-family: 'Encode-Sans-SC';
+}
+
+@font-face {
+  font-family: 'Encode-Sans-SC';
+  src: url('./Encode_Sans_SC/EncodeSansSC-VariableFont_wdth\,wght.ttf');
 }
