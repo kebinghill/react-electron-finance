@@ -10,7 +10,11 @@ Form {
   width: 95%;
 }
 
+#financial-todo-list {
+  width: 95%;
+  border: 1px solid black;
+}
+
 #financial-text-area {
-  max-height: 50%;
   resize: none;
 }
