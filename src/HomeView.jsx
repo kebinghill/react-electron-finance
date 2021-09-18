@@ -3,6 +3,8 @@ import UpcomingPayday from './UpcomingPayday';
 import UpcomingBills from './UpcomingBills';
 import RemainingBalance from './RemainingBalance';
 import InvestmentWatchlist from './InvestmentWatchlist';
+import SeparateExpenses from './SeparateExpenses';
+import FinancialNotes from './FinancialNotes';
 
 import './HomeView.css';
 
@@ -15,7 +17,13 @@ export default function HomeView() {
         <UpcomingBills />
         <RemainingBalance />
       </div>
-      <InvestmentWatchlist />
+      <div>
+        <InvestmentWatchlist />
+        <div id="expense-notes-main">
+          <SeparateExpenses />
+          <FinancialNotes />
+        </div>
+      </div>
     </div>
   );
 }
