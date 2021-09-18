@@ -1,0 +1,7 @@
+#investment-watchlist {
+  display: flex;
+  border: 1px yellow solid;
+  justify-content: space-around;
+  height: 35vh;
+  width: 70vw;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import UpcomingPayday from './UpcomingPayday';
 import UpcomingBills from './UpcomingBills';
 import RemainingBalance from './RemainingBalance';
+import InvestmentWatchlist from './InvestmentWatchlist';
 
 import './HomeView.css';
 
@@ -14,6 +15,7 @@ export default function HomeView() {
         <UpcomingBills />
         <RemainingBalance />
       </div>
+      <InvestmentWatchlist />
     </div>
   );
 }
