@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './SeparateExpenses.css';
+
 export default function SeparateExpenses() {
   return (
     <div id="separate-expenses">

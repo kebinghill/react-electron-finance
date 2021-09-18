@@ -1,0 +1,12 @@
+#financial-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid orange;
+  width: 50%;
+}
+
+Form {
+  width: 100%;
+  max-height: 50%;
+}
