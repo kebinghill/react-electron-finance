@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeView from './HomeView';
+import FinancesView from './FinancesView';
 
 //STYLING
 import { Tabs, Tab } from 'react-bootstrap';
@@ -13,7 +14,7 @@ export default function Header() {
           <HomeView />
         </Tab>
         <Tab eventKey="profile" title="Finances">
-          <h2>World</h2>
+          <FinancesView />
         </Tab>
         <Tab eventKey="contact" title="Investments">
           <h3>Bleh</h3>

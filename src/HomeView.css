@@ -1,0 +1,14 @@
+#home-view {
+  display: flex;
+  border: 2px blue solid;
+  height: 90vh;
+}
+
+#income-container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+  width: 30vw;
+}
