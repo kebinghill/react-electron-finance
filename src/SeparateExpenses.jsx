@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SeparateExpenses.css';
+import './styles/SeparateExpenses.css';
 
 export default function SeparateExpenses() {
   return (

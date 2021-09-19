@@ -1,12 +1,12 @@
 body {
   margin: 0;
   color: white;
-  background: url('background-image.jpeg') no-repeat center center fixed;
+  background: url('../background-image.jpeg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Encode-Sans-SC';
 }
 
 @font-face {
   font-family: 'Encode-Sans-SC';
-  src: url('./fonts/EncodeSansSC-VariableFont_wdth\,wght.ttf');
+  src: url('../fonts/EncodeSansSC-VariableFont_wdth\,wght.ttf');
 }

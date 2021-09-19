@@ -4,7 +4,7 @@ import FinancesView from './FinancesView';
 
 //STYLING
 import { Tabs, Tab } from 'react-bootstrap';
-import './Header.css';
+import './styles/Header.css';
 
 export default function Header() {
   return (
