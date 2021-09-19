@@ -25,8 +25,6 @@ export default function TodoList() {
 
   return (
     <div id="todo-list">
-      <Button onClick={handleAdd}>+</Button>
-
       <ListGroup>
         {list.map((item, idx) => {
           return (
@@ -36,6 +34,9 @@ export default function TodoList() {
           );
         })}
       </ListGroup>
+      <Button onClick={handleAdd} size="sm">
+        +
+      </Button>
     </div>
   );
 }
