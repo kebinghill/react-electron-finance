@@ -30,7 +30,7 @@
     "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
     "electron:build": "",
     "electron:start": "wait-on tcp:3000 && electron .",
-    "server": "node server.js"
+    "start:dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -49,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
