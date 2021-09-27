@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 const syncDb = require('./db/sync');
 
+const axios = require('axios');
+
 const User = require('./db/models/User');
 
 app.get('/', (req, res) => {
@@ -13,6 +15,8 @@ app.get('/users', async (req, res) => {
   const users = await User.findAll();
   res.status(200).send(users);
 });
+
+app.get('/merge', async (req, res) => {});
 
 const init = async () => {
   try {

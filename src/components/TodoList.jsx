@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './styles/FinancialNotes.css';
+import '../styles/FinancialNotes.css';
 import Form from 'react-bootstrap/form';
 import Button from 'react-bootstrap/button';
 import ListGroup from 'react-bootstrap/ListGroup';

@@ -1,9 +1,10 @@
-import './styles/App.css';
 import React, { useState } from 'react';
-import Header from './Header';
 import { useDispatch, useSelector } from 'react-redux';
-import { /*incremented*/ amountAdded } from './features/example.js';
-import { useFetchBreedsQuery } from './features/dogs/dogsApiSlice';
+
+import '../styles/App.css';
+import Header from './Header';
+import { /*incremented*/ amountAdded } from '../features/example.js';
+import { useFetchBreedsQuery } from '../features/dogs/dogsApiSlice';
 
 function App() {
   const count = useSelector((state) => state.counter.value);

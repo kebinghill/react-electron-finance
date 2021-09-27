@@ -2,7 +2,7 @@ import React from 'react';
 import TodoList from './TodoList';
 
 import Form from 'react-bootstrap/form';
-import './styles/FinancialNotes.css';
+import '../styles/FinancialNotes.css';
 
 export default function FinancialNotes() {
   return (

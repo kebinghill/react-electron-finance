@@ -6,7 +6,7 @@ import InvestmentWatchlist from './InvestmentWatchlist';
 import SeparateExpenses from './SeparateExpenses';
 import FinancialNotes from './FinancialNotes';
 
-import './styles/HomeView.css';
+import '../styles/HomeView.css';
 
 export default function HomeView() {
   return (
