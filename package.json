@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@electron/remote": "^2.0.1",
+    "@mergeapi/merge_hris_api": "^1.0.8",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -11,6 +12,7 @@
     "axios": "^0.21.4",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
     "electron": "^14.0.1",
     "express": "^4.17.1",
     "pg": "^8.7.1",
