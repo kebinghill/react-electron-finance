@@ -1,5 +1,7 @@
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express();
+app.use(express.json());
 require('dotenv').config();
 const port = process.env.PORT || 3001;
 
@@ -7,37 +9,25 @@ const port = process.env.PORT || 3001;
 const syncDb = require('./db/sync');
 const User = require('./db/models/User');
 
-//INITIAL CALL TO MERGE API - https://www.merge.dev/docs/linking-flow/get-started
+//AUTHENTICATING USER
 
-const prodKey = process.env.MERGE_API_KEY;
-
-const MergeHrisApi = require('@mergeapi/merge_hris_api');
-let defaultClient = MergeHrisApi.ApiClient.instance;
-
-defaultClient.authentications['tokenAuth'] = {
-  type: 'bearer',
-  accessToken: prodKey,
+User.authenticate = async ({ email, password }) => {
+  const user = await User.findOne({ where: { email, password } });
+  if (user) {
+    console.log(user);
+    return jwt.sign({ id: user.id }, process.env.JWT_TOKEN);
+  }
 };
 
-const apiInstance = new MergeHrisApi.LinkTokenApi();
-const endUserDetails = {
-  end_user_organization_name: 'Mnmt',
-  end_user_email_address: '93kevingil@gmail.com',
-  end_user_origin_id: '123456',
-  categories: ['hris'],
-  // identifier of desired integration
-  integration: 'justworks',
-};
-
-apiInstance.linkTokenCreate(endUserDetails, (error, data) => {
-  if (error) {
-    console.error('ERROR IN API INSTANCE:', error);
-  } else {
-    console.log('DATA TOKEN SUCCESS:', data.link_token);
+app.post('/auth', async (req, res, next) => {
+  try {
+    res.send(await User.authenticate(req.body));
+  } catch (error) {
+    next('ERROR IN AUTH ROUTE:', error);
   }
 });
 
-//END OF MERGE API CALL TEST
+//END OF AUTHENTICATION
 
 app.get('/', (req, res) => {
   res.status(200).send('Hello World');
@@ -48,6 +38,12 @@ app.get('/users', async (req, res) => {
   res.status(200).send(users);
 });
 
+//ERROR HANDLING
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).send({ error: err.message });
+});
+
+//RUN APP
 const init = async () => {
   try {
     await syncDb();
