@@ -1,0 +1,8 @@
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.844);
+}
+
+.modal-content {
+  background-color: gray;
+  height: 75vh;
+}

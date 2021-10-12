@@ -21,22 +21,30 @@ User.authenticate = async ({ email, password }) => {
 
 app.post('/auth', async (req, res, next) => {
   try {
-    res.send(await User.authenticate(req.body));
+    res.send({ token: await User.authenticate(req.body) });
   } catch (error) {
-    next('ERROR IN AUTH ROUTE:', error);
+    next('ERROR IN POST AUTH ROUTE:', error);
+  }
+});
+
+app.get('/auth', async (req, res, next) => {
+  try {
+    res.send(await User.byToken(req.headers.authorization));
+  } catch (error) {
+    next('ERROR IN GET AUTH ROUTE:', error);
   }
 });
 
 //END OF AUTHENTICATION
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello World');
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send('Hello World');
+// });
 
-app.get('/users', async (req, res) => {
-  const users = await User.findAll();
-  res.status(200).send(users);
-});
+// app.get('/users', async (req, res) => {
+//   const users = await User.findAll();
+//   res.status(200).send(users);
+// });
 
 //ERROR HANDLING
 app.use((err, req, res, next) => {

@@ -11,6 +11,12 @@ const syncDb = async () => {
       email: '93kevingil@gmail.com',
       password: 'password',
     });
+    User.create({
+      firstName: 'User',
+      lastName: 'Two',
+      email: 'kevin@gmail.com',
+      password: 'password2',
+    });
   } catch (error) {
     console.log('ERROR IN SYNC FILE:', error);
   }

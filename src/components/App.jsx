@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import '../styles/App.css';
 import Header from './Header';
+import LoginModal from './LoginModal';
 import { /*incremented*/ amountAdded } from '../features/example.js';
 import { useFetchBreedsQuery } from '../features/dogs/dogsApiSlice';
 
@@ -13,6 +14,8 @@ function App() {
   const [numDogs, setNumDogs] = useState(10);
   const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
 
+  const loggedIn = false;
+
   const handleClick = () => {
     //increment by 1
     // dispatch(incremented());
@@ -22,7 +25,8 @@ function App() {
   };
   return (
     <div className="App">
-      <Header />
+      {loggedIn ? <Header /> : <LoginModal />}
+
       <button onClick={handleClick}>count is: {count}</button>
 
       <div>
