@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import '../styles/LoginModal.css';
 
+import DogsExample from './DogsExample';
+
 const LoginModal = () => {
   const [show, setShow] = useState(true);
 
@@ -9,7 +11,7 @@ const LoginModal = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div style={{ background: 'red' }}>
+    <div>
       <Modal
         show={show}
         onHide={handleClose}
@@ -32,6 +34,7 @@ const LoginModal = () => {
           <Button variant="primary">Login</Button>
         </Modal.Footer>
       </Modal>
+      <DogsExample />
     </div>
   );
 };
