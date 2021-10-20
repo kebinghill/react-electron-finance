@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 require('dotenv').config();
 const port = process.env.PORT || 3001;
@@ -12,16 +14,16 @@ const User = require('./db/models/User');
 //AUTHENTICATING USER
 
 User.authenticate = async ({ email, password }) => {
-  const user = await User.findOne({ where: { email, password } });
+  const user = await User.findAll({ where: { email, password } });
   if (user) {
-    console.log(user);
     return jwt.sign({ id: user.id }, process.env.JWT_TOKEN);
   }
 };
 
 app.post('/auth', async (req, res, next) => {
   try {
-    res.send({ token: await User.authenticate(req.body) });
+    const token = await User.authenticate(req.body);
+    res.send({ token });
   } catch (error) {
     next('ERROR IN POST AUTH ROUTE:', error);
   }
@@ -56,7 +58,7 @@ const init = async () => {
   try {
     await syncDb();
     app.listen(port, () => {
-      console.log(`App running on port: ${port}`);
+      console.log(`Server running on port: ${port}`);
     });
   } catch (error) {
     console.log('ERROR IN SERVER FILE, INIT:', error);
