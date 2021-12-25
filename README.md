@@ -9,8 +9,6 @@ yarn electron:serve
 #RUN BACKEND (running on localhost 3001)
 npm run start:dev
 
-test
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
