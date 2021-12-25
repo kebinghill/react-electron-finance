@@ -1,6 +1,14 @@
-# To run the application use the following script in the command line
+##FIRST TIME CLONING REPO
 
+- yarn install
+- add .env file to src folder for dogsAPI and label API key DOGS_API_Key (https://thedogapi.com/)
+
+#RUN FRONTEND (running on localhost 3000)
 yarn electron:serve
+
+#RUN BACKEND (running on localhost 3001)
+npm run start:dev
+
 
 # Getting Started with Create React App
 

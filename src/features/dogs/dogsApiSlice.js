@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import DOGS_API_KEY from '../../.env.local';
+import DOGS_API_KEY from '../../.env';
 
 //JUST NEED TO DEFINE AN API SLICE FOR EACH API SERVER, NOT FOR EACH ENDPOINT (BLOG EX: POST, COMMENTS, USERS)
 
